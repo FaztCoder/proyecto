@@ -5,7 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container {
     max-width: 100%;
-    margin: 15px 100px;
+    margin: 30px 50px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;

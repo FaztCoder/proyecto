@@ -1,7 +1,13 @@
 <div class="container">
-  <mat-toolbar>
+  <mat-toolbar style="margin-bottom: 20px;">
     <span>Alumnos</span>
   </mat-toolbar>
+
+  <!-- filtro para busqueda -->
+  <mat-form-field appearance="standard">
+    <mat-label>Filtro</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtra por cualquier columna" #input autocomplete="off">
+  </mat-form-field>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -15,21 +21,49 @@
     </ng-container>
   
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
     </ng-container>
   
     <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <ng-container matColumnDef="apellidoP">
+      <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellidoP}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <ng-container matColumnDef="apellidoM">
+      <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellidoM}} </td>
+    </ng-container>
+
+    <!-- Telefono 1 Column -->
+    <ng-container matColumnDef="telefono_1">
+      <th mat-header-cell *matHeaderCellDef> Telefono 1 </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono_1}} </td>
+    </ng-container>
+
+    <!-- Telefono 2 Column -->
+    <ng-container matColumnDef="telefono_2">
+      <th mat-header-cell *matHeaderCellDef> Telefono 2 </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono_2}} </td>
+    </ng-container>
+  
+    <!-- Acciones Column -->
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td style="text-align: end;" mat-cell *matCellDef="let element">
+        <a class="pointer" href="" style="color: #1878b0" matTooltip="Ver alumno">
+          <mat-icon>search</mat-icon>
+        </a>
+        <a class="pointer" href="" style="color: #1f516f" matTooltip="Editar alumno">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a class="pointer" href="" style="color: #e15639" matTooltip="Eliminar alumno">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

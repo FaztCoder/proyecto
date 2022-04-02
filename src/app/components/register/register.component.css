@@ -23,16 +23,3 @@
 .spinner {
     margin: 0 auto;
 }
-
-.register p a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    text-decoration: none;
-    color: rgb(111, 0, 255);
-}
-
-a:hover {
-    cursor: pointer;
-}
