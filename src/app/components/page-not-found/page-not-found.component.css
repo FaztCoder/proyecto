@@ -1,0 +1,8 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+}
