@@ -1,13 +1,18 @@
 # Proyecto
 
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
-
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png" alt="Angular" width="150px">
 </p>
 
+## Desarrolo de aplicaciones basadas en frameworks
+
+<p> Frontend para proyecto final </p>
+<p> Desarrollado con: </p>
+<ul>
+  <li>Angular Material</li>
+ </ul>
 
 ## Development server
 
@@ -32,7 +37,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-## Desarrolo de aplicaciones basadas en frameworks
-
-<p> Frontend para proyecto final </p>
