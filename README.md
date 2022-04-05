@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png" alt="JuveYell" width="00px">
+<img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png" alt="JuveYell" width="200px">
 </p>
 </div>
 
