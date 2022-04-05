@@ -35,6 +35,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <p> Frontend para proyecto final </p>
 
-```{css, echo=FALSE}
+```
    h1, h2, h3 { text-align: center; }
 ```
