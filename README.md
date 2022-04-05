@@ -33,8 +33,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Desarrolo de aplicaciones basadas en frameworks
 
-<p> Frontend para proyecto final </p>
-
-```{css, echo=TRUE}
-   h1, h2, h3 { text-align: center; }
-```
+<center><p> Frontend para proyecto final </p></center>
