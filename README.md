@@ -1,12 +1,12 @@
 # Proyecto
 
-<div style="text-align:center">
+<div style="text-align:center;">
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
- </div>
+ 
 
 <img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png"
      style="height: 100px; width: 100px; align: center;">
- 
+ </div>
 
 ## Development server
 
