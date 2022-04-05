@@ -4,7 +4,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 
-<p style = "text-align:center;"><img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png" alt="Angular" width="200px"></p>
+<p style = "text-align:center;"><img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png" alt="Angular" width="150px"></p>
 
 
 ## Development server
