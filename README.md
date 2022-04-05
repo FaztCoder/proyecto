@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run ```ng serve``` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -33,4 +33,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Desarrolo de aplicaciones basadas en frameworks
 
-<center><p> Frontend para proyecto final </p></center>
+<p> Frontend para proyecto final </p>
