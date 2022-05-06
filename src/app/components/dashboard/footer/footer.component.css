@@ -1,7 +1,26 @@
+/* .footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
+
+} */
+
 .footer {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  background-color: #222831;
+  height: 4rem;
+  width: 100%;
+  bottom: 0;
+  /* position: fixed; */
+}
+
+h3 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  color: #00ADB5;
+  margin-top: 2rem;
 }

@@ -28,20 +28,20 @@ export class AlumnosComponent implements OnInit {
   ];
 
   ELEMENT_DATA: PeriodicElement[] = [
-    {position: 1, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 2, nombre: 'Erika', apellidoP: 'De la Zeta', apellidoM: 'Rodrigyez', telefono_1: '0987654321', telefono_2: '3021564896' },
-    {position: 3, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 4, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 5, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 6, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 7, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 8, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 9, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
-    {position: 10, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 1, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 2, nombre: 'Erika', apellidoP: 'De la Zeta', apellidoM: 'Rodrigyez', telefono_1: '0987654321', telefono_2: '3021564896' },
+    { position: 3, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 4, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 5, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 6, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 7, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 8, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 9, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
+    { position: 10, nombre: 'Anthony', apellidoP: 'Solano', apellidoM: 'López', telefono_1: '123456789', telefono_2: '123456789' },
   ];
 
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
-  
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort
 

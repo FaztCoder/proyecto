@@ -3,7 +3,7 @@
 }
 
 .nav-center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
 }

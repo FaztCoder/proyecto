@@ -1,16 +1,41 @@
-<mat-toolbar class="nav-center" color="primary">
-  <span>Casa de cultura</span>
-  <!-- <span class="example-spacer"></span> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container mt-0">
+    <a class="navbar-brand" href="#">Casa de cultura</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="example-spacer"></span>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav nav-center">
+        <a class="nav-link active pe-3" aria-current="page" routerLink="/dashboard">Dashboard</a>
+        <a class="nav-link active pe-3" routerLink="/dashboard/usuarios">usuarios</a>
+        <a class="nav-link active pe-3" routerLink="/dashboard/roles">roles</a>
+        <a class="nav-link active pe-3" routerLink="/dashboard/alumnos">alumnos</a>
+        <a class="nav-link active pe-3" routerLink="/dashboard/cursos">cursos</a>
+        <button mat-icon-button class="example-icon favorite-icon pe-3" aria-label="Example icon-button with heart icon"
+          routerLink="/login">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <mat-toolbar class="nav-center collapse navbar-collapse" color="primary">
+    <span>Casa de cultura</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="example-spacer"></span>
     <button mat-button routerLink="/dashboard">Dashboard</button>
     <button mat-button routerLink="/dashboard/usuarios">Usuarios</button>
     <button mat-button routerLink="/dashboard/roles">Roles</button>
     <button mat-button routerLink="/dashboard/alumnos">Alumnos</button>
     <button mat-button routerLink="/dashboard/cursos">Cursos</button>
-    <button mat-icon-button class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-    routerLink="/login">
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      routerLink="/login">
       <mat-icon>logout</mat-icon>
     </button>
-
-
-</mat-toolbar>
+  </mat-toolbar> -->
