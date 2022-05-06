@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/83378042/161823244-6e32b848-8610-4dcf-aae4-76d170474528.png" alt="Angular" width="150px">
+</p>
+
+## Desarrolo de aplicaciones basadas en frameworks
+
+<p> Frontend para proyecto final </p>
+<p> Desarrollado con: </p>
+<ul>
+  <li>Angular Material</li>
+ </ul>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
