@@ -11,6 +11,9 @@ import { SharedModule } from './components/shared/shared.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 
+// Datatable
+import { DataTablesModule } from "angular-datatables";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,8 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

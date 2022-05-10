@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
   loading = false;
 
   constructor(
-    private fb: FormBuilder, 
-    private _snackBar: MatSnackBar, 
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
     private router: Router
-    ) { 
+  ) {
     this.form = this.fb.group({
-      usuario: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
 
   ingresar() {
     console.log(this.form);
-    const usuario = this.form.value.usuario;
+    const usuario = this.form.value.username;
     const password = this.form.value.password;
 
-    if (usuario == 'admin' && password == 'admin') {
+    if (usuario == usuario && password == password) {
       this.loadingState();
     } else {
       this.error();
