@@ -14,6 +14,9 @@ import { RegisterComponent } from './components/register/register.component';
 // Datatable
 import { DataTablesModule } from "angular-datatables";
 
+// HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { DataTablesModule } from "angular-datatables";
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    DataTablesModule
+    DataTablesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

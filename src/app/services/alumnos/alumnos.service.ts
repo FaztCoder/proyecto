@@ -12,7 +12,6 @@ const url = environment.url_api;
 })
 export class AlumnosService {
 
-
   constructor() { }
 
   getAlumnos() {

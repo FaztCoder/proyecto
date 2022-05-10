@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from 'src/app/services/login/login.service';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService,
+    private authService: AuthService,
   ) {
     this.form = this.fb.group({
       username: ['', Validators.required],
@@ -27,32 +32,24 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ingresar() {
-    console.log(this.form);
-    const usuario = this.form.value.username;
-    const password = this.form.value.password;
+  ingresar(): any {
+    // console.log(this.form);
+    // const usuario = this.form.value.username;
+    // const password = this.form.value.password;
 
-    if (usuario == usuario && password == password) {
-      this.loadingState();
-    } else {
-      this.error();
-      this.form.reset();
-    }
+    // if (usuario === usuario && password === password) {
+    //   this.router.navigate(['/dashboard']);
+    // } else {
+    //   this._snackBar.open('Usuario o contraseña incorrectos', '', {
+    //     duration: 2000,
+    //   });
+    // }
+    this.authService.signUp(this.form.value).subscribe(
+      (res) => {
+        console.log(res);
+        this.cookieService.set('access_token', res.token);
+        this.router.navigate(['/dashboard']);
+      }
+    );
   }
-
-  error() {
-    this._snackBar.open('Usuario o contraseña incorrectos', '', {
-      duration: 2000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-    });
-  }
-
-  loadingState() {
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate(['/dashboard']);
-    }, 2000);
-  }
-
 }
