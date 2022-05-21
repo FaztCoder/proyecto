@@ -12,6 +12,7 @@ import { AlumnosComponent } from './alumnos/alumnos.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { RolesComponent } from './roles/roles.component';
 import { FooterComponent } from './footer/footer.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -29,6 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     CommonModule,
     DashboardRoutingModule,
     SharedModule
-  ]
+  ],
+  exports: [],
+  providers: [CookieService],
 })
 export class DashboardModule { }

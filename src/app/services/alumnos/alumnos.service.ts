@@ -12,10 +12,12 @@ const url = environment.url_api;
 })
 export class AlumnosService {
 
-  constructor() { }
+  // headers
+  headersT = new HttpHeaders().set('Content-Type', 'application/json');
+
+  constructor(private http: HttpClient) { }
 
   getAlumnos() {
-    return fetch(`${url}/api/alumnos`)
-      .then(res => res.json());
+    return this.http.get(`${url}/api/alumnos`, { headers: this.headersT });
   }
 }

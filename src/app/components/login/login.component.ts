@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.authService.signUp(this.form.value).subscribe(
       (res) => {
         console.log(res);
-        this.cookieService.set('access_token', res.token);
+        this.cookieService.set('access_token', res.token, 1, '/'); //guarda el token en cookie por un día y el "/" es para que se pueda acceder a todas las rutas
         this.router.navigate(['/dashboard']);
       }
     );

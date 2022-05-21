@@ -7,27 +7,29 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AlumnoModel } from 'src/app/Models/AlumnoModel';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   endpoint: string = 'http://localhost:8080';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  currentUser = {};
+  alumnos: AlumnoModel[] = [];
+
   constructor(private http: HttpClient, public router: Router) { }
-  // Sign-up
-  signUp(user: any): Observable<any> {
-    let api = `${this.endpoint}/auth/login`;
-    return this.http.post(api, user).pipe(catchError(this.handleError));
+  // Sign-up (inicia sesion consumiendo el servicio de alumno)
+  signUp(alumno: any): Observable<any> {
+    let api = `${this.endpoint}/login`;
+    return this.http.post(api, alumno).pipe(catchError(this.handleError));
   }
-  // Sign-in
-  signIn(user: any) {
+  // Sign-in (iniciar sesion con local storage)
+  signIn(alumno: any) {
     return this.http
-      .post<any>(`${this.endpoint}/auth/login`, user)
+      .post<any>(`${this.endpoint}/login`, alumno)
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token);
-        this.getUserProfile(res._id).subscribe((res) => {
-          this.currentUser = res;
+        this.getAlumno(res.id_alumno).subscribe((res) => {
+          this.alumnos = res;
           this.router.navigate(['dashboard' + res.msg._id]);
         });
       });
@@ -45,9 +47,9 @@ export class AuthService {
       this.router.navigate(['/login']);
     }
   }
-  // User profile
-  getUserProfile(id: any): Observable<any> {
-    let api = `${this.endpoint}/user-profile/${id}`;
+  // Alumno profile
+  getAlumno(id: any): Observable<any> {
+    let api = `${this.endpoint}/api/alumnos/${id}`;
     return this.http.get(api, { headers: this.headers }).pipe(
       map((res) => {
         return res || {};
