@@ -13,7 +13,8 @@ import { AuthService } from 'src/app/services/login/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
+  // form: FormGroup;
+  form: FormGroup = new FormGroup({});
   loading = false;
 
   constructor(
@@ -23,33 +24,40 @@ export class LoginComponent implements OnInit {
     private cookieService: CookieService,
     private authService: AuthService,
   ) {
+    
+  }
+
+  ngOnInit(): void {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {
-  }
-
   ingresar(): any {
-    // console.log(this.form);
-    // const usuario = this.form.value.username;
-    // const password = this.form.value.password;
-
-    // if (usuario === usuario && password === password) {
-    //   this.router.navigate(['/dashboard']);
-    // } else {
-    //   this._snackBar.open('Usuario o contraseña incorrectos', '', {
-    //     duration: 2000,
-    //   });
-    // }
-    this.authService.signUp(this.form.value).subscribe(
+    const {username, password} = this.form.value
+    this.authService.login(username, password).subscribe(
       (res) => {
-        console.log(res);
-        this.cookieService.set('access_token', res.token, 1, '/'); //guarda el token en cookie por un día y el "/" es para que se pueda acceder a todas las rutas
-        this.router.navigate(['/dashboard']);
-      }
-    );
-  }
+         console.log(res);
+      const {token} = res;
+      const {name} = res;
+      const {username} = res;
+      const {rol_id} = res;
+      this.cookieService.set('name',name);
+      this.cookieService.set('username',username);
+      this.cookieService.set('role',rol_id);
+      //duracion del token de una hora
+      this.cookieService.set('token',token,1/24);
+      this.router.navigate(['/dashboard']);
+      });
+  //   this.authService.login().subscribe(
+  //     (res) => {
+  //       console.log(res);
+  //       this.cookieService.set('access_token', res.token, 1, '/'); //guarda el token en cookie por un día y el "/" es para que se pueda acceder a todas las rutas
+  //       this.router.navigate(['/dashboard']);
+  //     }
+  //   );
+  // }
+}
+
 }

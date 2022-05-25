@@ -22,6 +22,15 @@ export class AuthService {
     let api = `${this.endpoint}/login`;
     return this.http.post(api, alumno).pipe(catchError(this.handleError));
   }
+  // login enviando los datos de body
+   login(username:string, password:string): Observable<any>{
+    const body ={
+      username,
+      password
+    }
+  return  this.http.post(`${this.endpoint}/login`,body,{headers:this.headers});
+  }
+
   // Sign-in (iniciar sesion con local storage)
   signIn(alumno: any) {
     return this.http

@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { AlumnoModel } from 'src/app/Models/AlumnoModel';
 
 import { Observable, Subject } from 'rxjs';
+import { AlumnosService } from 'src/app/services/alumnos/alumnos.service';
 
 
 export interface PeriodicElement {
@@ -26,30 +27,27 @@ export interface PeriodicElement {
 export class AlumnosComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
-  alumnos: AlumnoModel[] = [];
+  alumnos: any;
 
   dtTrigger: Subject<any> = new Subject();
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              private as: AlumnosService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 2
     };
-    this.httpClient.get<AlumnoModel[]>('http://localhost:8080/api/alumnos').subscribe(
-      (data) => {
-        if (data != null) {
-          this.alumnos = data;
-          this.dtTrigger.next(0);
-        } else {
-          alert('No hay datos');
-        }
-      }
-    );
+    this.as.getAlumnos().subscribe(
+      (data)=>{
+        this.alumnos = data;
+        this.dtTrigger.next(0);
+        console.log(data);
+      });
   }
-
+  
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();

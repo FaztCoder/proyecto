@@ -18,16 +18,33 @@ export class JwtInterceptorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // return next.handle(request);
 
-    const toke: string = this.cookieService.get('access_token');
-    let req = request;
+    // const token: string = this.cookieService.get('token');
+    // let req = request;
 
-    if (toke) {
-      req = request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${toke}`
-        }
-      });
+    // if (token) {
+    //   req = request.clone({
+    //     setHeaders: {
+    //       Authorization: `Bearer ${token}`
+    //     }
+    //   });
+    // }
+    // return next.handle(req);
+
+     try{
+         const token = this.cookieService.get('token');
+        let newRequest = request
+        newRequest = request.clone({
+        
+          setHeaders: {
+            Authorization: `Bearer ${token}`,
+          }
+        })
+     
+        return next.handle(newRequest);
+    }catch(e){
+     console.log('errorrrrrr',e);
+      return next.handle(request);
     }
-    return next.handle(req);
+    
   }
 }

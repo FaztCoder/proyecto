@@ -17,7 +17,7 @@ export class UsuarioGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    const cookie = this.cookieService.check('access_token');
+    const cookie = this.cookieService.check('token');
     if (cookie) {
       return true;
     } else {
