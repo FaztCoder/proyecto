@@ -31,6 +31,9 @@ import { CookieService } from 'ngx-cookie-service';
     DataTablesModule,
     HttpClientModule
   ],
+  exports: [
+    DataTablesModule
+  ],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
