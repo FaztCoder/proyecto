@@ -15,6 +15,7 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'roles', component: RolesComponent },
       { path: 'alumnos', component: AlumnosComponent, canActivate: [UsuarioGuardGuard] },
+      { path: 'alumnos/:id_alumno', component: AlumnosComponent, canActivate: [UsuarioGuardGuard] },
       { path: 'cursos', component: CursosComponent },
     ]
   }

@@ -1,5 +1,10 @@
 <div class="container-fluid">
-<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <h1 class="text-center mt-4" >Alumnos</h1>
+<a type="button" class="btn btn-primary m-4" data-toggle="modal" data-target="#exampleModal"
+(click)="agregarAlumno()">
+  Nuevo Alumno
+</a>
+<table id="DataTables_Table_0" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover text-centeer">
   <thead>
     <tr>
       <th>ID</th>
@@ -8,16 +13,29 @@
       <th>Apellido Materno</th>
       <th>Telefono 1</th>
       <th>Telefono 2</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let alumno of alumnos">
-      <td>{{ alumno.id_alumno }}</td>
+    <tr *ngFor="let alumno of alumnos; let id=index">
+      <td>{{id+1}}</td>
+      <!-- <td>{{ alumno.id_alumno }}</td> -->
       <td>{{ alumno.nombre_alumno }}</td>
       <td>{{ alumno.apellido_p }}</td>
       <td>{{ alumno.apellido_m }}</td>
       <td>{{ alumno.telefono_1 }}</td>
       <td>{{ alumno.telefono_2 }}</td>
+      <td>
+        <a (click)="editarAlumno(alumno)">
+          <i class="bi bi-pencil"></i>
+        </a>
+      </td>
+      <td>
+        <a>
+          <i class="bi bi-trash"></i>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>

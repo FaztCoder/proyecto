@@ -5,5 +5,4 @@ export class AlumnoModel {
   apellido_m: string = '';
   telefono_1: string = '';
   telefono_2: string = '';
-  token: string = '';
 }

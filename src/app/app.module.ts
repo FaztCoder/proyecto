@@ -15,7 +15,8 @@ import { DataTablesModule } from "angular-datatables";
 import { HttpClientModule } from '@angular/common/http';
 // CookieService
 import { CookieService } from 'ngx-cookie-service';
-
+// SweeetAlert2
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +30,12 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserAnimationsModule,
     SharedModule,
     DataTablesModule,
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module
   ],
   exports: [
-    DataTablesModule
+    DataTablesModule,
+    SweetAlert2Module
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
